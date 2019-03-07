@@ -8,42 +8,42 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'home',
+        path: 'planets',
         children: [
           {
             path: '',
-            loadChildren: '../pages/home/home.module#HomePageModule'
+            loadChildren: '../pages/planets/planets.module#PlanetsPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'people',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../pages/people/people.module#PeoplePageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'starships',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../pages/starships/starships.module#StarshipsPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: '/tabs/planets',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/tabs/planets',
     pathMatch: 'full'
   }
 ];
