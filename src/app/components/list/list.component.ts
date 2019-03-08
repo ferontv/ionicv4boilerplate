@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { isContentQueryHost } from '@angular/core/src/render3/util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -9,8 +9,19 @@ import { isContentQueryHost } from '@angular/core/src/render3/util';
 export class ListComponent implements OnInit {
   @Input() swapi;
   @Input() icon;
-  constructor() { }
+  id: string;
+  path: string;
+  constructor(private router: Router) { }
 
   ngOnInit() { }
+
+  showItem(item) {
+    let urlElements = item.url.split("/");
+    console.log(urlElements);
+    this.id = urlElements[urlElements.length - 2];
+    this.path = urlElements[urlElements.length - 3];
+    console.log(this.path);
+    this.router.navigateByUrl(`/${this.path}/${this.id}`);
+  }
 
 }

@@ -5,7 +5,8 @@ const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'planets', loadChildren: './pages/planets/planets.module#PlanetsPageModule' },
   { path: 'people', loadChildren: './pages/people/people.module#PeoplePageModule' },
-  { path: 'starships', loadChildren: './pages/starships/starships.module#StarshipsPageModule' }
+  { path: 'starships', loadChildren: './pages/starships/starships.module#StarshipsPageModule' },
+  { path: 'planets/:id', loadChildren: './pages/description-planets/description-planets.module#DescriptionPlanetsPageModule' }
 ];
 @NgModule({
   imports: [
